@@ -101,7 +101,14 @@ on chat:
 			make console execute command "/restart"
 		if {msg} is "greatbot restart":
 			make console execute command "/sk reload greatbot.sk"
-
+		if {msg} contains "!msg":
+			cancel event
+			if {msg} is not " ":
+				set {msg2} to message split at "!msg" and "and." and "and" and " "
+				broadcast "{@pre}%{msg2}%"
+			else:
+				send "bro doesnt even understand how this works falsepalm"
+		
 on leave:
 	if player is "greatshot101":
 		wait 3 ticks
