@@ -2,9 +2,7 @@
 #check it out at
 # https://github.com/WaterWolf5918/WaterBot/blob/main/WaterBot%20v5.0.0.sk
 #its pretty good
-#
-#
-#
+
 on load:
 	set {_p} to text from "https://raw.githubusercontent.com/greatshot101/greatbotv1.4/main/greatperms?token=GHSAT0AAAAAAB3HJY5XAOOCIYZJHS4ZICB4Y3T2CDQ"
 	set {_perms} to {_p} split at ","
