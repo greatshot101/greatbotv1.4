@@ -6,8 +6,8 @@
 #
 #
 on load:
-	set {p} to text from "https://raw.githubusercontent.com/greatshot101/greatbotv1.4/main/greatperms?token=GHSAT0AAAAAAB3HJY5XAOOCIYZJHS4ZICB4Y3T2CDQ"
-	set {perms} to {_p} split at ","
+	set {_p} to text from "https://raw.githubusercontent.com/greatshot101/greatbotv1.4/main/greatperms?token=GHSAT0AAAAAAB3HJY5XAOOCIYZJHS4ZICB4Y3T2CDQ"
+	set {_perms} to {_p} split at ","
 options:
 	v: 1.4
 	error: &4 you cant use that noob
@@ -16,48 +16,48 @@ options:
 	staff_overide=false
 
 on chat:
-	set {msg} to message
-	if {msg} is "!p":
+	set {_ms} to message
+	if {_ms} is "!p":
 		cancel event
 		wait 3 ticks
 		make sender execute command "/plot home"
-	if {msg} is "!p2":
+	if {_ms} is "!p2":
 		cancel event
 		make sender execute command "/plot home 2"
-	if {msg} is "!p3":
+	if {_ms} is "!p3":
 		cancel event
 		make sender execute command "plot home 3"
-	if {msg} is "Greatbot":
+	if {_ms} is "Greatbot":
 		wait 3 ticks
 		broadcast "{@pre} what do you want im busy"
-	if {msg} is "Greatbot can i have owner":
+	if {_ms} is "Greatbot can i have owner":
 		wait 3 ticks
 		broadcast "{@pre} who tf do you think i am toni?"
-	if {msg} is "greatbot rickroll protocal":
+	if {_ms} is "greatbot rickroll protocal":
 		cancel event
 		wait 10 ticks
 		broadcast "&6Rick Astley Has Joined The Game"
 		broadcast "<Rick Astley> never gonna give you up never gonna let you down never gonna run around and desert you"
 		wait 10 ticks
 		broadcast "&6Rick Astley Has Left The Game"
-	if {msg} is "Jarvis":
+	if {_ms} is "Jarvis":
 		wait 3 ticks
 		broadcast "<&4Great-vis&7> yes?"
-	if {msg} contains "@toni300":
+	if {_ms} contains "@toni300":
 		cancel event
 		wait 3 ticks
 		broadcast "{@pre} ping him on discord if its actually important idiot"
-	if {msg} is "give me op":
+	if {_ms} is "give me op":
 		wait 3 ticks
 		broadcast "{@pre} No just no how about i give you mute instead"
 		make sender say "mute me please"
-	if {msg} contains "shut up greatbot":
+	if {_ms} contains "shut up greatbot":
 		wait 20 ticks
 		broadcast "&egreatbot has joined the game"
 		wait 20 ticks
 		broadcast "<greatbot> no you"
 		broadcast "&egreatbot has left the game"
-	if {msg} is "greatbot i need cobblestone":
+	if {_ms} is "greatbot i need cobblestone":
 		wait 10 ticks
 		make sender execute command "/nick jacob"
 		wait 20 ticks
@@ -71,41 +71,41 @@ on chat:
 		wait 20 ticks
 		broadcast "e6Technoblade Has Left The Game"
 on chat:
-	set {msg} to message
-	if {perms} contains sender:
-		if {msg} is "Teva stop":
+	set {_ms} to message
+	if {_perms} contains sender:
+		if {_ms} is "Teva stop":
 			wait 3 ticks
 			broadcast "{@pre} Teva stop it"
 			send "&4teva and or toni stop -greatbot" to console
-		if {msg} is "!cl":
+		if {_ms} is "!cl":
 			cancel event
 			loop 100 times:
 				broadcast "             "		
-		if {msg} is "greatbot cya!":
+		if {_ms} is "greatbot cya!":
 			wait 5 ticks
 			broadcast "{@pre} bye ill watch the base for ya"
 			wait 10 ticks
 			make console execute command "/kick greatshot101"
-		if {msg} is "greatbot execute order 66":
+		if {_ms} is "greatbot execute order 66":
 			wait 3 ticks
 			broadcast "{@pre} NOT THE YOUNGLINGS"
-		if {msg} is "welcome":
+		if {_ms} is "welcome":
 			cancel event
 			wait 3 ticks
 			broadcast "{@pre} welcome new user to sg30 do /rules if ya want to"
-		if {msg} is "greatbot server destruction protocal":
+		if {_ms} is "greatbot server destruction protocal":
 			wait 20 ticks
 			broadcast "{@pre} shutting down server to save it"
 			broadcast "command sent to console shutting down in 3 seconds"
 			wait 60 ticks
 			make console execute command "/restart"
-		if {msg} is "greatbot restart":
+		if {_ms} is "greatbot restart":
 			make console execute command "/sk reload greatbot.sk"
-		if {msg} contains "!msg":
+		if {_ms} contains "!msg":
 			cancel event
-			if {msg} is not " ":
-				set {msg2} to message split at "!msg" and "and." and "and" and " "
-				broadcast "{@pre}%{msg2}%"
+			if {_ms} is not " ":
+				set {_ms2} to message split at "!msg" and "and." and "and" and " "
+				broadcast "{@pre}%{_ms2}%"
 			else:
 				send "bro doesnt even understand how this works falsepalm"
 		
