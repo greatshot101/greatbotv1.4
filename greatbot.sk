@@ -1,17 +1,11 @@
-#based on waterbot
-#check it out at
-# https://github.com/WaterWolf5918/WaterBot/blob/main/WaterBot%20v5.0.0.sk
-#its pretty good
-
 on load:
-	set {_p} to text from "https://raw.githubusercontent.com/greatshot101/greatbotv1.4/main/greatperms?token=GHSAT0AAAAAAB3HJY5XAOOCIYZJHS4ZICB4Y3T2CDQ"
+	set {_p} to text from "greatshot101"
 	set {_perms} to {_p} split at ","
 options:
 	v: 1.4
 	error: &4 you cant use that noob
 	cp: &4running command sit back and relax
-	pre: &4<greatbot$4
-	staff_overide=false
+	pre: &4<greatbot>
 
 on chat:
 	set {_ms} to message
@@ -102,7 +96,7 @@ on chat:
 		if {_ms} contains "!msg":
 			cancel event
 			if {_ms} is not " ":
-				set {_ms2} to message split at "!msg" and "and." and "and" and " "
+				set {_ms2} to message split at "!msg"
 				broadcast "{@pre}%{_ms2}%"
 			else:
 				send "bro doesnt even understand how this works falsepalm"
