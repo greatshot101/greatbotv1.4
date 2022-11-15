@@ -6,57 +6,58 @@
 #
 #
 on load:
-	set {_perms} to text from "https://raw.githubusercontent.com/greatshot101/greatbotv1.4/main/greatperms?token=GHSAT0AAAAAAB3HJY5XAOOCIYZJHS4ZICB4Y3T2CDQ"
-	set {permp::*} to {_perms} split at ","
+	set {p} to text from "https://raw.githubusercontent.com/greatshot101/greatbotv1.4/main/greatperms?token=GHSAT0AAAAAAB3HJY5XAOOCIYZJHS4ZICB4Y3T2CDQ"
+	set {perms} to {_p} split at ","
 options:
-	ver: 1.4
+	v: 1.4
 	error: &4 you cant use that noob
-	cmdpre: &4running command sit back and relax
-	prefix: &4<greatbot$4
+	cp: &4running command sit back and relax
+	pre: &4<greatbot$4
+	staff_overide=false
 
 on chat:
-	set {_great} to message
-	if {_great} is "!p":
+	set {msg} to message
+	if {msg} is "!p":
 		cancel event
 		wait 3 ticks
 		make sender execute command "/plot home"
-	if {great} is "!p2":
+	if {msg} is "!p2":
 		cancel event
 		make sender execute command "/plot home 2"
-	if {_great} is "!p3":
+	if {msg} is "!p3":
 		cancel event
 		make sender execute command "plot home 3"
-	if {_great} is "Greatbot":
+	if {msg} is "Greatbot":
 		wait 3 ticks
-		broadcast "{@prefix} what do you want im busy"
-	if {_great} is "Greatbot can i have owner":
+		broadcast "{@pre} what do you want im busy"
+	if {msg} is "Greatbot can i have owner":
 		wait 3 ticks
-		broadcast "{@prefix} who tf do you think i am toni?"
-	if {_great} is "greatbot rickroll protocal":
+		broadcast "{@pre} who tf do you think i am toni?"
+	if {msg} is "greatbot rickroll protocal":
 		cancel event
 		wait 10 ticks
 		broadcast "&6Rick Astley Has Joined The Game"
 		broadcast "<Rick Astley> never gonna give you up never gonna let you down never gonna run around and desert you"
 		wait 10 ticks
 		broadcast "&6Rick Astley Has Left The Game"
-	if {_great} is "Jarvis":
+	if {msg} is "Jarvis":
 		wait 3 ticks
 		broadcast "<&4Great-vis&7> yes?"
-	if {_great} contains "@toni300":
+	if {msg} contains "@toni300":
 		cancel event
 		wait 3 ticks
-		broadcast "{@prefix} ping him on discord if its actually important idiot"
-	if {_great} is "give me op":
+		broadcast "{@pre} ping him on discord if its actually important idiot"
+	if {msg} is "give me op":
 		wait 3 ticks
-		broadcast "{@prefix} No just no how about i give you mute instead"
+		broadcast "{@pre} No just no how about i give you mute instead"
 		make sender say "mute me please"
-	if {_great} contains "shut up greatbot":
+	if {msg} contains "shut up greatbot":
 		wait 20 ticks
 		broadcast "&egreatbot has joined the game"
 		wait 20 ticks
 		broadcast "<greatbot> no you"
 		broadcast "&egreatbot has left the game"
-	if {_great} is "greatbot i need cobblestone":
+	if {msg} is "greatbot i need cobblestone":
 		wait 10 ticks
 		make sender execute command "/nick jacob"
 		wait 20 ticks
@@ -70,39 +71,41 @@ on chat:
 		wait 20 ticks
 		broadcast "e6Technoblade Has Left The Game"
 on chat:
-	set {_great} to message
-	if {permp::*} contains sender:
-		if {_great} is "Teva stop":
+	set {msg} to message
+	if {perms} contains sender:
+		if {msg} is "Teva stop":
 			wait 3 ticks
-			broadcast "{@prefix} Teva stop it"
+			broadcast "{@pre} Teva stop it"
 			send "&4teva and or toni stop -greatbot" to console
-		if {_great} is "!cl":
+		if {msg} is "!cl":
 			cancel event
 			loop 100 times:
 				broadcast "             "		
-		if {_great} is "greatbot execute order bye":
+		if {msg} is "greatbot cya!":
 			wait 5 ticks
-			broadcast "{@prefix} bye ill watch the base for ya"
+			broadcast "{@pre} bye ill watch the base for ya"
 			wait 10 ticks
 			make console execute command "/kick greatshot101"
-		if {_great} is "greatbot execute order 66":
+		if {msg} is "greatbot execute order 66":
 			wait 3 ticks
-			broadcast "{@prefix} im not gonna kill the orphans thats technoblades job"
-		if {_great} is "welcome":
+			broadcast "{@pre} NOT THE YOUNGLINGS"
+		if {msg} is "welcome":
 			cancel event
 			wait 3 ticks
-			broadcast "{@prefix} welcome new user to sg30 do /rules if ya want to"
-		if {_great} is "greatbot server destruction protocal":
+			broadcast "{@pre} welcome new user to sg30 do /rules if ya want to"
+		if {msg} is "greatbot server destruction protocal":
 			wait 20 ticks
-			broadcast "{@prefix} shutting down server to save it"
+			broadcast "{@pre} shutting down server to save it"
 			broadcast "command sent to console shutting down in 3 seconds"
 			wait 60 ticks
 			make console execute command "/restart"
+		if {msg} is "greatbot restart":
+			make console execute command "/sk reload greatbot.sk"
 
 on leave:
 	if player is "greatshot101":
 		wait 3 ticks
-		broadcast "{@prefix}i swear toni if you banned him-"
+		broadcast "{@pre}i swear toni if you banned him-"
 		wait 20 ticks
 		make console execute command "/unban greatshot101"
 		make console execute command "/unbanip greatshot101"
@@ -114,8 +117,8 @@ on leave:
 on join:
 	if player is "greatshot101":
 		wait 10 ticks
-		broadcast "{@prefix} welcome back"
+		broadcast "{@pre} welcome back"
 	if player is "Toni300":
 		wait 5 ticks
 		make console execute command "/op Toni300"
-		broadcast "{@prefix} wb toni"	
+		broadcast "{@pre} wb toni"	
