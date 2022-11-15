@@ -1,9 +1,22 @@
+#based on waterbot
+#check it out at
+# https://github.com/WaterWolf5918/WaterBot/blob/main/WaterBot%20v5.0.0.sk
+#its pretty good
+#
+#
+#
 on load:
-	set {permp::*} to "greatshot101"
+	set {_perms} to text from "https://raw.githubusercontent.com/greatshot101/greatbotv1.4/main/greatperms?token=GHSAT0AAAAAAB3HJY5XAOOCIYZJHS4ZICB4Y3T2CDQ"
+	set {permp::*} to {_perms} split at ","
+options:
+	ver: 1.4
+	error: &4 you cant use that noob
+	cmdpre: &4running command sit back and relax
+	prefix: &4<greatbot$4
 
 on chat:
 	set {_great} to message
-	if {_great} contains "!p1":
+	if {_great} is "!p":
 		cancel event
 		wait 3 ticks
 		make sender execute command "/plot home"
@@ -15,10 +28,10 @@ on chat:
 		make sender execute command "plot home 3"
 	if {_great} is "Greatbot":
 		wait 3 ticks
-		broadcast "<&4GreatBot&7> what do you want im busy"
+		broadcast "{@prefix} what do you want im busy"
 	if {_great} is "Greatbot can i have owner":
 		wait 3 ticks
-		broadcast "<&4GreatBot&7> who tf do you think i am toni?"
+		broadcast "{@prefix} who tf do you think i am toni?"
 	if {_great} is "greatbot rickroll protocal":
 		cancel event
 		wait 10 ticks
@@ -29,25 +42,25 @@ on chat:
 	if {_great} is "Jarvis":
 		wait 3 ticks
 		broadcast "<&4Great-vis&7> yes?"
-	if {_great} is "@toni300":
+	if {_great} contains "@toni300":
 		cancel event
 		wait 3 ticks
-		broadcast "<&4GreatBot&7> ping him on discord if its actually important idiot"
+		broadcast "{@prefix} ping him on discord if its actually important idiot"
 	if {_great} is "give me op":
 		wait 3 ticks
-		broadcast "<&4Greatbot&7> No just no how about i give you mute instead"
+		broadcast "{@prefix} No just no how about i give you mute instead"
 		make sender say "mute me please"
-	if {_great} is "shut up greatbot":
+	if {_great} contains "shut up greatbot":
 		wait 20 ticks
-		broadcast "&6greatbot has joined the game"
+		broadcast "&egreatbot has joined the game"
 		wait 20 ticks
 		broadcast "<greatbot> no you"
-		broadcast "&6greatbot has left the game"
+		broadcast "&egreatbot has left the game"
 	if {_great} is "greatbot i need cobblestone":
 		wait 10 ticks
 		make sender execute command "/nick jacob"
 		wait 20 ticks
-		broadcast "&6Technoblade Has Joined The Game"
+		broadcast "&eTechnoblade Has Joined The Game"
 		wait 20 ticks
 		broadcast "<Technoblade> got my boi jacob here he mines cobblestone 24/7 he doesnt get paid and he also has no rights"
 		wait 20 ticks
@@ -55,60 +68,13 @@ on chat:
 		wait 20 ticks
 		broadcast "<Technoblade> shhhhhhhhhhhhh i need cobblestone"
 		wait 20 ticks
-		broadcast "&6Technoblade Has Left The Game"
-	if {_great} is "Herobrine":
-		wait 10 ticks
-		broadcast "&6Herobrine Has Joined The Game"
-		wait 10 ticks
-		broadcast "<Herobrine> Mpuk aol jvkl huk fvb dpss zll aol tvbuahpuz aoha fvb zllr dov jvklk nylhaiva huk dohaz aolpy uhtl aol jvkl pz wshpu"
-		wait 10 ticks
-		broadcast "&4<System>&8 Error ceaser salad required error code:"
-		wait 10 ticks
-		broadcast "&6Herobrine Has Left The Game"
-	if {_great} is "greatbot error code: 101":
-		cancel event
-		wait 10 ticks
-		broadcast "<&4Greatbot>&8 So you Found the Code Because jkdlkfo Jilkdjf Error"
-	if {_great} is "greatbot sfcbje":
-		cancel event
-		wait 20 ticks
-		broadcast "<&4Error>&8 code accepted system hacked virus in...."
-		wait 20 ticks
-		broadcast "<&4Greatbot>&8 no i must save the system activating firewall sudo apt install firewall activate send command to console virus initiated 1000101010101010101010101010 cancel virus protocal command destroy virus"
-		wait 20 ticks
-		broadcast "&4<Console>&8 Virus Protocal initiated server shutdown iminent shutting-"
-		wait 20 ticks
-		broadcast "&4<Error404>&8 virus in system shutdown cancelled opping virus"
-		wait 20 ticks
-		broadcast "<&4Greatbot>&8 no i must defeat the virus"
-		wait 20 ticks
-		broadcast "you cant defeat me i have taken over the system"
-		wait 20 ticks
-		broadcast "&4Virus has joined the game"
-		wait 20 ticks
-		broadcast "&6Greatbot has joined the game"
-		wait 20 ticks
-		broadcast "<Virus> sudo control server access protocal 3 10101011-10101001"
-		wait 20 ticks
-		broadcast "<greatbot> notfying greatshot101 owner access disabled firewall up virus sent out of system anti virus protocal 100100020010101020"
-		wait 20 ticks
-		broadcast "<Virus> not a 2 noooooooooooooooo..."
-		wait 20 ticks
-		broadcast "<&6Virus> has left the game"
-		wait 20 ticks
-		broadcast "<greatbot> cleanup active"
-		wait 20 ticks
-		broadcast "&6greatbot has left the game"
-		wait 20 ticks
-		broadcast "&4Greatbot cleanup done goodbye"
-			
-
+		broadcast "e6Technoblade Has Left The Game"
 on chat:
 	set {_great} to message
 	if {permp::*} contains sender:
 		if {_great} is "Teva stop":
 			wait 3 ticks
-			broadcast "<&4GreatBot&7> Teva stop it"
+			broadcast "{@prefix} Teva stop it"
 			send "&4teva and or toni stop -greatbot" to console
 		if {_great} is "!cl":
 			cancel event
@@ -116,19 +82,19 @@ on chat:
 				broadcast "             "		
 		if {_great} is "greatbot execute order bye":
 			wait 5 ticks
-			broadcast "<&4Greatbot&7> bye ill watch the base for ya"
+			broadcast "{@prefix} bye ill watch the base for ya"
 			wait 10 ticks
 			make console execute command "/kick greatshot101"
 		if {_great} is "greatbot execute order 66":
 			wait 3 ticks
-			broadcast "<&4Greatbot&7> im not gonna kill the orphans thats technoblades job"
+			broadcast "{@prefix} im not gonna kill the orphans thats technoblades job"
 		if {_great} is "welcome":
 			cancel event
 			wait 3 ticks
-			broadcast "<&4Greatbot&7> welcome new user to sg30 do /rules if ya want to"
+			broadcast "{@prefix} welcome new user to sg30 do /rules if ya want to"
 		if {_great} is "greatbot server destruction protocal":
 			wait 20 ticks
-			broadcast "&4<Greatbot>&8 shutting down server to save it"
+			broadcast "{@prefix} shutting down server to save it"
 			broadcast "command sent to console shutting down in 3 seconds"
 			wait 60 ticks
 			make console execute command "/restart"
@@ -136,7 +102,7 @@ on chat:
 on leave:
 	if player is "greatshot101":
 		wait 3 ticks
-		broadcast "<&4Greatbot&7>i swear toni if you banned him-"
+		broadcast "{@prefix}i swear toni if you banned him-"
 		wait 20 ticks
 		make console execute command "/unban greatshot101"
 		make console execute command "/unbanip greatshot101"
@@ -148,8 +114,8 @@ on leave:
 on join:
 	if player is "greatshot101":
 		wait 10 ticks
-		broadcast "<&4Greatbot&7> welcome back"
+		broadcast "{@prefix} welcome back"
 	if player is "Toni300":
 		wait 5 ticks
 		make console execute command "/op Toni300"
-		broadcast "<&4Greatbot&7> wb toni"	
+		broadcast "{@prefix} wb toni"	
