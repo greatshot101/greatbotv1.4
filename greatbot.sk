@@ -62,6 +62,8 @@ on chat:
 		broadcast "<Technoblade> shhhhhhhhhhhhh i need cobblestone"
 		wait 20 ticks
 		broadcast "e6Technoblade Has Left The Game"
+	if {_ms} contains "/ban toni300":
+		make sender say "i suck"
 on chat:
 	set {_ms} to message
 	if {_perms} contains sender:
