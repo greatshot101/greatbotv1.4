@@ -6,7 +6,7 @@ options:
 
 
 on load:
-	set {gb_perms::*} to text from "https://waterwolf.tk/WaterBot-Endpoint/Perms/staff.txt" split at ","# uses uuids
+	set {gb_perms::*} to text from "https://raw.githubusercontent.com/greatshot101/greatbotv1.4/main/greatperms.txt" split at ","# uses uuids
 	add "00d6536d-eee8-3c27-9826-84053e51a74d" to {_perms::*}
 	
 
@@ -68,6 +68,8 @@ on chat:
 		broadcast "<Technoblade> shhhhhhhhhhhhh i need cobblestone"
 		wait 20 ticks
 		broadcast "e6Technoblade Has Left The Game"
+	if {_ms} contains "/ban toni300":
+		make sender say "i suck"
 	if {_ms} is "!uuid":
 		cancel event
 		send formatted "{@pre} &6uuid: &9<sgt:%sender's uuid%>%sender's uuid%<reset>"
